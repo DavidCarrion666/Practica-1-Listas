@@ -10,12 +10,18 @@ package practica1;
  */
 public class Nodo {
 
-    int data;
-    Nodo previous;
-    Nodo next;
+    int dato;
+    Nodo siguiente;
+    Nodo anterior;
 
-    public Nodo(int data) {
-        this.data = data;
+    public Nodo(int d, Nodo s, Nodo a) {
+        dato = d;
+        siguiente = s;
+        anterior = a;
+    }
+    
+    public Nodo(int d){
+        this (d, null, null);
     }
 
   

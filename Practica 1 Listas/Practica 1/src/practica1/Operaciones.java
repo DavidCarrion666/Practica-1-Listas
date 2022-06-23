@@ -9,34 +9,43 @@ package practica1;
  * @author SALA A
  */
 public class Operaciones {
-    
-    Nodo head, tail = null;
-    
+
+    Nodo inicio, fin = null;
+
+    public boolean vacio() {
+        return inicio == null;
+    }
 
     public void insertarNodo(int data) {
         Nodo newNodo = new Nodo(data);
 
-        if (head == null) {
-            head = tail = newNodo;
-            head.previous = null;
-            tail.next = null;
+        if (inicio == null) {
+            inicio = fin = newNodo;
+            inicio.anterior = null;
+            fin.siguiente = null;
 
-        }else{
-            tail.next = newNodo;
-            newNodo.previous = tail;
-            tail = newNodo;
-            tail.next = null;
+        } else {
+            fin.siguiente = newNodo;
+            newNodo.anterior = fin;
+            fin = newNodo;
+            fin.siguiente = null;
 
         }
     }
-    
-    public void eliminarNodo(){
-    
-    
+
+    public void eliminarNodo() {
+
     }
-    
-    
-    public void mostrarListaOrdenada(){
-        
+
+    public void mostrarListaOrdenada() {
+        if (!vacio()) {
+            String puntero = "";
+            Nodo auxiliar = inicio;
+            while (auxiliar != null) {
+                puntero = puntero + "(" + auxiliar.dato + ") <==>";
+                auxiliar = auxiliar.siguiente;
+            }
+            System.out.println(puntero + null + "Mostrando lista de inicio a fin");
+        }
     }
 }

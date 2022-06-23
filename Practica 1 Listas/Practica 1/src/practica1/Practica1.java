@@ -58,9 +58,12 @@ public class Practica1 {
 
     public static void insertarNodo() {
         Scanner sc = new Scanner(System.in);
+        Operaciones insertar = new Operaciones();
         System.out.println("------------------------------------------------");
         System.out.println("Ingrese un valor entero para el nuevo nodo");
-        int valor = sc.nextInt();
+        int valor = sc.nextInt();       
+        insertar.insertarNodo(valor);
+        
     }
 
     public static void eliminarNodo() {
@@ -74,7 +77,12 @@ public class Practica1 {
     }
 
     public static void mostrarListaOrdenada() {
+        Operaciones mostrar = new Operaciones();
         System.out.println("------------------------------------------------");
+        
+        mostrar.mostrarListaOrdenada();
+        
+        
     }
 
 }
